@@ -5,70 +5,213 @@
     --color-white-40: rgba(255, 255, 255, 0.4);
 }
 
-body {
-    background-color: var(--color-black);
-    font-family: 'B612', sans-serif;
-    color: var(--color-white);
-
-    padding: 40px;
+@font-face {
+  src: url(./fonts/Redcollar.woff2) format('woff2'), url(./fonts/Redcollar.woff) format('woff');
+  font-family: 'Redcollar';
 }
 
-header {
-    height: 2.5rem;
-    max-width: 1360px;
+@font-face {
+  src: url(./fonts/TTCommonsRegular.woff) format('woff');
+  font-family: 'TTCommons';
 }
 
-header img {
-    display: block;
-    width: fit-content;
-    margin: auto;
+html {
+  font-size: 62.5%;
 }
 
-main {
-    display: flex;
-    max-width: 1360px;
-    margin: auto;
+.root {
+  font-family: 'Redcollar', Arial, sans-serif;
+  background-color: black;
+  color: white;
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.left-block {
-    width: 70%;
-    padding: 20px;
+.page {
+  padding: 4rem;
+  max-width: 144rem;
+  margin: 0 auto;
 }
 
-.left-block h1 {
-    font-size: 32px;
+
+.header {
+  position: relative;
 }
 
-.left-block h2 {
-    font-size: 24px;
+.header__logo {
+  position: absolute;
+  right: 0;
+  top: -1.2rem;
 }
 
-.left-block p {
-    font-size: 18px;
+
+.main {
+  display: grid;
+  grid-template-columns: 32.2rem 1fr;
+  gap: 3.1rem;
 }
 
-.right-block {
-    width: 30%;
-    padding: 20px;
-    background-color: #333;
-    border-radius: 10px;
+
+.aside {
+  position: relative;
+  max-width: 32.2rem;
 }
 
-.profile-info {
-    text-align: center;
+.aside__photo {
+  width: 100%;
 }
 
-.profile-info img {
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
-    margin-bottom: 10px;
+.aside::before {
+  content: url(' ./img/photo-decor.png ');
+  position: absolute;
+  top: 3.5rem;
+  left: 14.5rem;
+  z-index: 10;
+  transform: rotate(40deg);
 }
 
-.profile-info h2 {
-    font-size: 24px;
+
+.info {
+  position: relative;
+  background-color: red;
+  padding: 4rem 2.4rem;
+  margin-top: -2rem;
+  min-height: 45.4rem;
+  border-radius: 2.4rem 2.4rem 0 0;
+  z-index: 1;
 }
 
-.profile-info p {
-    font-size: 18px;
+.info::before {
+  content: url(' ./img/about-arrow-top.svg ');
+  position: absolute;
+  top: -19px;
+  left: 13.1rem;
+}
+
+.info__name {
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+  letter-spacing: -0.1rem;
+  margin: 0;
+}
+
+.info__extra {
+  font-family: TTCommons;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.8rem;
+  letter-spacing: -0.1rem;
+  margin: 0.8rem 0 4rem 0;
+}
+
+
+.contact {
+  padding: 0;
+}
+
+.contact__list {
+  list-style-type: none;
+}
+
+.contact__list:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.contact__link {
+  display: flex;
+  align-items: center;
+
+  font-family: TTCommons;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 2.8rem;
+  letter-spacing: -0.1rem;
+
+  text-decoration: none;
+  color: white;
+}
+
+.contact__link-icon {
+  margin-right: 1.6rem;
+}
+
+.about {
+  margin-top: 1.8rem;
+}
+
+
+.about__text {
+  font-family: TTCommons;
+  font-size: 2rem;
+  max-width: 69rem;
+}
+
+.about__skills {
+  position: relative;
+  border: 1px solid white;
+  padding: 4.8rem 2.8rem;
+  min-height: 58.6rem;
+}
+
+.about__skills::before {
+  content: url(' ./img/arrow.svg ');
+  position: absolute;
+  top: -1px;
+  z-index: 10;
+  left: 57px;
+}
+
+.about__skills-block {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  column-gap: 5.6rem;
+}
+
+.about__skills-block:not(:last-child) {
+  border-bottom: 1px solid white;
+  margin-bottom: 2rem;
+}
+
+.about__skills-heading {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.about__skills-text {
+  margin: 0;
+  font-family: TTCommons;
+  font-style: normal;
+  font-size: 1.8rem;
+}
+
+.about__skills-text:last-child {
+  margin-bottom: 2rem;
+}
+
+.about__skills-text:not(:first-child) {
+  opacity: 0.4;
+}
+
+@media (max-width: 360px) {
+  .page {
+    padding: 2rem;
+  }
+  .header__logo {
+    left: 0;
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+    margin-top: 3rem;
+  }
+
+  .about__skills-block {
+    grid-template-columns: 1fr;
+  }
+
+  .info::before {
+    left: 11rem;
+  }
 }
