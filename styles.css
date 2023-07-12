@@ -6,7 +6,7 @@
 }
 
 @font-face {
-  src: url(./fonts/Redcollar.woff2) format('woff2'), url(./fonts/Redcollar.woff) format('woff');
+  src: url(./fonts/Redcollar.woff) format('woff');
   font-family: 'Redcollar';
 }
 
