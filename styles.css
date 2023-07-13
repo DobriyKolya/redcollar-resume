@@ -219,6 +219,6 @@ html {
     font-size: 1.6rem;
   }
   .about__skills::before {
-    left: 124px;
+    left: 13rem;
   }
 }
