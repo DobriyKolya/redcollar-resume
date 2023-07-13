@@ -212,6 +212,13 @@ html {
   }
 
   .info::before {
-    left: 11rem;
+    left: 13rem;
+  }
+  .about__skills-heading {
+    margin-bottom: 3rem;
+    font-size: 1.6rem;
+  }
+  .about__skills::before {
+    left: 124px;
   }
 }
